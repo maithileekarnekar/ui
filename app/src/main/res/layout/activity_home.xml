@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:background="@color/background_color">
 
-        <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/background_color">
@@ -31,7 +31,8 @@
                     android:layout_marginTop="16dp"
                     android:src="@drawable/ic_location"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/location" />
 
                 <TextView
                     android:id="@+id/txtAddAddress"
@@ -153,7 +154,7 @@
                         android:id="@+id/txtInviteFriend"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Invite a friend and get \u20B9150"
+                        android:text="@string/invite_a_friend_and_get_u20b9150"
                         android:textColor="@color/text_color"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -201,7 +202,6 @@
                 android:src="@drawable/imgrinzifyservices"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cardViewInviteLink" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
