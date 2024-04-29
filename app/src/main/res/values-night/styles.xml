@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.ConnectingMatters" parent="Base.Theme.Rinzify" />
+    <style name="Theme.RemoveSplashScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:statusBarColor">@color/app_accent_color</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

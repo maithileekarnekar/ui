@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/LoginLayout"
+        android:layout_width="match_parent"
+        android:layout_height="316dp"
+        android:background="@drawable/ic_rinzyfy_login_resource"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintTop_toBottomOf="@id/LoginLayout"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtLoginOrSignIn"
+            android:text="@string/login_sign_up"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textStyle="bold"
+            android:textColor="@color/blue"
+            android:textSize="35sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <com.hbb20.CountryCodePicker
+            app:ccp_defaultNameCode="IND"
+            android:id="@+id/country_code"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/border_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtLoginOrSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            app:ccp_autoDetectCountry="true"
+            app:ccp_showFlag="true"
+            app:ccp_showNameCode="true">
+        </com.hbb20.CountryCodePicker>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/edtEmailAddressLayout"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="59dp"
+            android:layout_marginStart="16dp"
+            android:enabled="true"
+            app:shapeAppearance="?attr/shapeAppearanceSmallComponent"
+            app:cursorColor="@color/app_accent_color"
+            android:textColorHint="@color/app_accent_color"
+            app:boxStrokeColor="@color/app_accent_color"
+            app:hintTextColor="@color/app_accent_color"
+            android:hint="@string/enter_mobile_number"
+            app:layout_constraintStart_toEndOf="@id/country_code"
+            app:layout_constraintTop_toBottomOf="@id/txtLoginOrSignIn">
+
+            <EditText
+                android:id="@+id/edtMobileNumber"
+                android:inputType="phone"
+                android:singleLine="true"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_marginTop="16dp"
+            android:text="@string/next"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/app_accent_color"
+            app:layout_constraintTop_toBottomOf="@id/country_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:id="@+id/View1"
+            android:layout_width="140dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_height="0.4dp"
+            android:background="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnNext" />
+
+        <TextView
+            android:id="@+id/txtOr"
+            android:layout_marginTop="22dp"
+            android:text="@string/or"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/View1"
+            app:layout_constraintTop_toBottomOf="@id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:id="@+id/View2"
+            android:layout_width="140dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_height="0.4dp"
+            android:background="@color/black"
+            app:layout_constraintStart_toEndOf="@id/txtOr"
+            app:layout_constraintTop_toBottomOf="@id/btnNext" />
+
+        <ImageView
+            android:id="@+id/imgGoogleIcon"
+            android:layout_marginTop="48dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_google"
+            app:layout_constraintEnd_toStartOf="@id/imgAppleIcon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/View1"/>
+
+        <ImageView
+            android:id="@+id/imgAppleIcon"
+            android:layout_marginTop="48dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_apple"
+            app:layout_constraintEnd_toStartOf="@id/imgFacebookIcon"
+            app:layout_constraintStart_toEndOf="@id/imgGoogleIcon"
+            app:layout_constraintTop_toBottomOf="@id/View1"/>
+
+        <ImageView
+            android:id="@+id/imgFacebookIcon"
+            android:layout_marginTop="48dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/ic_facebook"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imgAppleIcon"
+            app:layout_constraintTop_toBottomOf="@id/View1"/>
+
+        <TextView
+            android:id="@+id/txtAgreeingTerm"
+            android:text="@string/by_continuing_you_agree_to_our"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/imgGoogleIcon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtTermsOfServices"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:text="@string/terms_of_services"
+            app:layout_constraintTop_toBottomOf="@+id/txtAgreeingTerm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/txtPrivacyPolicy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/dottedLineView1"
+            android:text="@string/dotted_line_view_1"
+            app:layout_constraintTop_toBottomOf="@+id/txtTermsOfServices"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/txtPrivacyPolicy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtPrivacyPolicy"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:text="@string/privacy_policy"
+            app:layout_constraintTop_toBottomOf="@+id/txtAgreeingTerm"
+            app:layout_constraintStart_toEndOf="@id/txtTermsOfServices"
+            app:layout_constraintEnd_toStartOf="@id/txtContentPolicies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/dottedLineView2"
+            android:text="@string/dotted_line_view_2"
+            app:layout_constraintTop_toBottomOf="@+id/txtPrivacyPolicy"
+            app:layout_constraintStart_toEndOf="@id/txtTermsOfServices"
+            app:layout_constraintEnd_toStartOf="@id/txtContentPolicies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtContentPolicies"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:text="@string/content_policies"
+            app:layout_constraintTop_toBottomOf="@+id/txtAgreeingTerm"
+            app:layout_constraintStart_toEndOf="@id/txtPrivacyPolicy"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/dottedLineView3"
+            android:text="@string/dotted_line_view_3"
+            app:layout_constraintTop_toBottomOf="@+id/txtContentPolicies"
+            app:layout_constraintStart_toEndOf="@id/txtPrivacyPolicy"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_home"
+        android:title="@string/home"
+        android:icon="@drawable/ic_home" />
+    <item
+        android:id="@+id/menu_my_schedule"
+        android:title="@string/my_schedule"
+        android:icon="@drawable/ic_myschedule" />
+    <item
+        android:id="@+id/menu_bookings"
+        android:title="@string/bookings"
+        android:icon="@drawable/ic_bookings" />
+
+    <item
+        android:id="@+id/menu_profile"
+        android:title="@string/e_shop"
+        android:icon="@drawable/ic_eshop" />
+</menu>

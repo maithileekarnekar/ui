@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/Layout"
+        android:layout_width="match_parent"
+        android:layout_height="316dp"
+        android:background="@drawable/ic_rinzyfy_login_resource"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintTop_toBottomOf="@id/Layout"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtLoginOrSignIn"
+            android:text="@string/otp_verification"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textStyle="bold"
+            android:textColor="@color/app_accent_color"
+            android:textSize="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:id="@+id/txtEnterOtp"
+            android:text="@string/enter_the_otp_you_received_to"
+            android:layout_marginTop="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtLoginOrSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtPhoneNumber"
+            android:text="@string/_91_7887777044"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            android:textSize="19sp"
+            app:layout_constraintTop_toBottomOf="@id/txtEnterOtp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/edtOTP1"
+            android:layout_marginTop="16dp"
+            android:inputType="phone"
+            android:background="@drawable/border_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtPhoneNumber"
+            android:layout_width="60dp"
+            android:layout_height="60dp"/>
+
+        <EditText
+            android:id="@+id/edtOTP2"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:inputType="phone"
+            app:layout_constraintEnd_toStartOf="@id/edtOTP3"
+            android:background="@drawable/border_background"
+            app:layout_constraintStart_toEndOf="@id/edtOTP1"
+            app:layout_constraintTop_toBottomOf="@id/txtPhoneNumber"
+            android:layout_width="60dp"
+            android:layout_height="60dp"/>
+
+        <EditText
+            android:id="@+id/edtOTP3"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:inputType="phone"
+            android:background="@drawable/border_background"
+            app:layout_constraintStart_toEndOf="@id/edtOTP2"
+            app:layout_constraintEnd_toStartOf="@id/edtOTP4"
+            app:layout_constraintTop_toBottomOf="@id/txtPhoneNumber"
+            android:layout_width="60dp"
+            android:layout_height="60dp"/>
+
+        <EditText
+            android:id="@+id/edtOTP4"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:inputType="phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/border_background"
+            app:layout_constraintStart_toEndOf="@id/edtOTP3"
+            app:layout_constraintTop_toBottomOf="@id/txtPhoneNumber"
+            android:layout_width="60dp"
+            android:layout_height="60dp"/>
+
+        <TextView
+            android:id="@+id/txtResendOTP"
+            android:text="@string/resend_otp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/blue"
+            app:layout_constraintTop_toBottomOf="@id/edtOTP1"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_marginTop="32dp"
+            android:text="@string/next"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/app_accent_color"
+            app:layout_constraintTop_toBottomOf="@id/txtResendOTP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtAgreeingTerm"
+            android:text="@string/by_continuing_you_agree_to_our"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btnNext"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtTermsOfServices"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:text="@string/terms_of_services"
+            app:layout_constraintTop_toBottomOf="@+id/txtAgreeingTerm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/txtPrivacyPolicy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/dottedLineView1"
+            android:text="@string/dotted_line_view_1"
+            app:layout_constraintTop_toBottomOf="@+id/txtTermsOfServices"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/txtPrivacyPolicy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtPrivacyPolicy"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:text="@string/privacy_policy"
+            app:layout_constraintTop_toBottomOf="@+id/txtAgreeingTerm"
+            app:layout_constraintStart_toEndOf="@id/txtTermsOfServices"
+            app:layout_constraintEnd_toStartOf="@id/txtContentPolicies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/dottedLineView2"
+            android:text="@string/dotted_line_view_2"
+            app:layout_constraintTop_toBottomOf="@+id/txtPrivacyPolicy"
+            app:layout_constraintStart_toEndOf="@id/txtTermsOfServices"
+            app:layout_constraintEnd_toStartOf="@id/txtContentPolicies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtContentPolicies"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:text="@string/content_policies"
+            app:layout_constraintTop_toBottomOf="@+id/txtAgreeingTerm"
+            app:layout_constraintStart_toEndOf="@id/txtPrivacyPolicy"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/dottedLineView3"
+            android:text="@string/dotted_line_view_3"
+            app:layout_constraintTop_toBottomOf="@+id/txtContentPolicies"
+            app:layout_constraintStart_toEndOf="@id/txtPrivacyPolicy"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
