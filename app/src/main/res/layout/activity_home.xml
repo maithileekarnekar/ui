@@ -15,140 +15,240 @@
             android:layout_height="wrap_content"
             android:background="@color/background_color">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:background="@color/background_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imgLocation"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/location"
+                android:src="@drawable/ic_location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtAddAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/add_address"
+                app:layout_constraintStart_toEndOf="@id/imgLocation"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Jaipur"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/imgLocation"
+                app:layout_constraintTop_toBottomOf="@id/txtAddAddress" />
+
+            <TextView
+                android:id="@+id/txtVehicle"
+                android:text="@string/vehicle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/txtAddAddress"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+            <TextView
+                android:id="@+id/txtAddVehicle"
+                android:text="@string/add"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/txtVehicle"
+                app:layout_constraintStart_toEndOf="@id/txtAddAddress"
+                android:layout_marginStart="150dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgUser"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:layout_margin="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_user"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/circular" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/dividerView"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider_color"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPagerforImages"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dividerView" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/selectedImageIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/background_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewPagerforImages"
+            app:tabBackground="@drawable/indicator"
+            app:tabGravity="center"
+            app:tabIndicator="@null"
+            app:tabIndicatorGravity="center" />
+
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/appBarLayout"
+                android:id="@+id/servicesLayout"
+                app:layout_constraintTop_toBottomOf="@id/selectedImageIndicator"
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:background="@color/background_color"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_height="wrap_content"
+                android:background="@color/background_color">
 
-                <ImageView
-                    android:id="@+id/imgLocation"
-                    android:layout_width="30dp"
-                    android:layout_height="25dp"
-                    android:layout_marginStart="16dp"
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewDailyCarWash"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:src="@drawable/ic_location"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:padding="16dp"
+                    app:cardBackgroundColor="@color/background_color"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp"
+                    app:cardPreventCornerOverlap="true"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:contentDescription="@string/location" />
+                    app:layout_constraintEnd_toStartOf="@id/guideline"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/txtAddAddress"
-                    android:layout_width="wrap_content"
+                    <ImageView
+                        android:id="@+id/imgDailyCarWash"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_dailycarwash" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewOnDemandCarWash"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:padding="16dp"
                     android:layout_marginTop="16dp"
-                    android:text="@string/add_address"
-                    app:layout_constraintStart_toEndOf="@id/imgLocation"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/txtLocation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:text="Jaipur"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@id/imgLocation"
-                    app:layout_constraintTop_toBottomOf="@id/txtAddAddress" />
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/imgTeacherProfile"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="end"
-                    android:layout_margin="16dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_user"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardBackgroundColor="@color/background_color"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:layout_constraintStart_toEndOf="@id/guideline"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:shapeAppearanceOverlay="@style/circular" />
+                    app:layout_constraintTop_toTopOf="parent">
 
+                    <ImageView
+                        android:id="@+id/imgOnDemandCarWash"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_ondemandcarwash" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewDetailingServices"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:padding="16dp"
+                    app:cardBackgroundColor="@color/background_color"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/guideline"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cardViewDailyCarWash">
+
+                    <ImageView
+                        android:id="@+id/imgDetailingServices"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_detailingservices" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewRepairServices"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:padding="16dp"
+                    app:cardBackgroundColor="@color/background_color"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:layout_constraintStart_toEndOf="@id/guideline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cardViewOnDemandCarWash">
+
+                    <ImageView
+                        android:id="@+id/imgRepairServices"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_repairservices" />
+                </androidx.cardview.widget.CardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:id="@+id/dividerView"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/divider_color"
-                app:layout_constraintRight_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
-
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/viewPagerforImages"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/dividerView" />
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/selectedImageIndicator"
-                android:layout_width="20dp"
-                android:layout_height="10dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/viewPagerforImages"
-                app:tabBackground="@drawable/indicator"
-                app:tabGravity="center"
-                app:tabIndicatorGravity="center" />
-
-            <ImageView
-                android:id="@+id/imgDailyCarWash"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:src="@drawable/ic_dailycarwash"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/selectedImageIndicator" />
-
-            <ImageView
-                android:id="@+id/imgOnDemandCarWash"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:src="@drawable/ic_ondemandcarwash"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/imgDailyCarWash"
-                app:layout_constraintTop_toBottomOf="@id/selectedImageIndicator" />
-
-            <ImageView
-                android:id="@+id/imgDetailingServices"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:src="@drawable/ic_detailingservices"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imgDailyCarWash" />
-
-            <ImageView
-                android:id="@+id/imgRepairServices"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:src="@drawable/ic_repairservices"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/imgDailyCarWash"
-                app:layout_constraintTop_toBottomOf="@id/imgOnDemandCarWash" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardViewInviteLink"
                 android:layout_width="match_parent"
                 android:layout_height="190dp"
+                android:layout_margin="16dp"
+                android:layout_marginTop="16dp"
                 android:padding="16dp"
                 app:cardBackgroundColor="@color/app_accent_color"
                 app:cardCornerRadius="25dp"
                 app:cardPreventCornerOverlap="true"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imgRepairServices">
+                app:layout_constraintTop_toBottomOf="@id/servicesLayout">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:padding="16dp"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:padding="16dp">
 
                     <TextView
                         android:id="@+id/txtInviteFriend"
@@ -164,44 +264,66 @@
                     <TextView
                         android:id="@+id/txtInviteDescription"
                         android:layout_width="wrap_content"
-                        android:layout_marginTop="16dp"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toBottomOf="@id/txtInviteFriend"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/give_a_friend_promo_code_on_u20b9150_and_you_ll_get_u20b9150_off_your_next_service"
+                        android:textSize="15sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        android:text="@string/give_a_friend_promo_code_on_u20b9150_and_you_ll_get_u20b9150_off_your_next_service"
-                        android:textSize="15sp" />
+                        app:layout_constraintTop_toBottomOf="@id/txtInviteFriend" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnCopyCode"
-                        android:text="@string/gbd21"
+                        android:layout_width="170dp"
+                        android:layout_height="50dp"
                         android:background="@drawable/dotted_border"
-                        app:layout_constraintStart_toStartOf="parent"
+                        android:text="@string/gbd21"
+                        android:gravity="center"
+                        android:drawableStart="@drawable/ic_copy_with_padding"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        android:layout_width="180dp"
-                        android:layout_height="50dp"/>
+                        app:layout_constraintStart_toStartOf="parent" />
 
                     <Button
                         android:id="@+id/btnInviteFriends"
+                        android:layout_width="170dp"
+                        android:layout_height="50dp"
                         android:backgroundTint="@color/text_color"
                         android:text="@string/invite_friends"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        android:gravity="center"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        android:layout_width="180dp"
-                        android:layout_height="50dp"/>
+                        app:layout_constraintEnd_toEndOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
-
             <ImageView
-                android:id="@+id/imgReviews"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:src="@drawable/imgrinzifyservices"
+                android:id="@+id/imgWashing"
+                android:layout_margin="16dp"
+                android:src="@drawable/img_washing"
+                app:layout_constraintTop_toBottomOf="@id/cardViewInviteLink"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cardViewInviteLink" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                app:layout_constraintTop_toBottomOf="@id/imgWashing"
+                app:layout_constraintStart_toStartOf="parent"
+                android:padding="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerReviewsView"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_marginBottom="110dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
@@ -221,6 +343,7 @@
         android:id="@+id/bottomNavigationBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/background_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

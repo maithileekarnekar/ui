@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- drawable_with_padding.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Define the padding/margin drawable -->
+    <item
+        android:left="16dp"
+    android:drawable="@drawable/ic_copy" />
+
+
+</layer-list>

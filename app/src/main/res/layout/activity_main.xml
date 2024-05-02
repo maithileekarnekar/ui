@@ -15,7 +15,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="101dp"
             android:layout_width="match_parent"
-            android:name="com.androidtime.rinzify.HomeActivity" />
+            android:name="com.androidtime.rinzify.homescreen.activities.HomeActivity" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

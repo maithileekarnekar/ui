@@ -28,4 +28,9 @@
     <string name="gbd21">GBD21</string>
     <string name="invite_a_friend_and_get_u20b9150">Invite a friend and get ₹150</string>
     <string name="location">location</string>
+    <string name="vehicle">Vehicle</string>
+    <string name="add">Add</string>
+    <string name="address">Address</string>
+    <string name="use_my_current_location">Use my current Location</string>
+    <string name="saved_addresses">SAVED ADDRESSES</string>
 </resources>

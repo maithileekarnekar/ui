@@ -20,11 +20,4 @@
         </shape>
     </item>
 
-    <!-- Icon -->
-    <item android:id="@+id/icon_shape">
-        <bitmap
-            android:src="@drawable/ic_copy"
-            android:gravity="start"
-            android:layout_marginStart="16dp" />  <!-- Adjust margin as needed -->
-    </item>
 </layer-list>

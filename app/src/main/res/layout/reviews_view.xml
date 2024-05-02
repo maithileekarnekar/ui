@@ -1,60 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView android:id="@+id/cardView"
-    android:layout_width="match_parent"
-    android:layout_height="190dp"
-    android:padding="16dp"
-    app:cardBackgroundColor="@color/app_accent_color"
-    app:cardCornerRadius="25dp"
-    app:cardPreventCornerOverlap="true"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/imgRepairServices"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+
+        <variable
+            name="review"
+            type="com.androidtime.rinzify.homescreen.models.Review" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
         android:padding="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/background_color"
+        app:cardCornerRadius="10dp"
+        app:cardPreventCornerOverlap="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgRepairServices">
 
-        <TextView
-            android:id="@+id/txtInviteFriend"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/invite_a_friend_and_get_u20b9150"
-            android:textColor="@color/text_color"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:padding="16dp">
 
-        <TextView
-            android:id="@+id/txtInviteDescription"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/txtInviteFriend"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:text="@string/give_a_friend_promo_code_on_u20b9150_and_you_ll_get_u20b9150_off_your_next_service"
-            android:textSize="15sp" />
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/RatingBar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:isIndicator="false"
+                android:progressBackgroundTint="@color/gray"
+                android:progressTint="#ffb400"
+                android:rating="@{review.rating}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnCopyCode"
-            android:text="@string/gbd21"
-            android:background="@drawable/dotted_border"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_width="180dp"
-            android:layout_height="50dp"/>
+            <TextView
+                android:id="@+id/txtReview"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{review.review}"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/RatingBar" />
 
-        <Button
-            android:id="@+id/btnInviteFriends"
-            android:backgroundTint="@color/text_color"
-            android:text="@string/invite_friends"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_width="180dp"
-            android:layout_height="50dp"/>
+            <TextView
+                android:id="@+id/txtReviewerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@{review.reviewerName}"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtReview" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
