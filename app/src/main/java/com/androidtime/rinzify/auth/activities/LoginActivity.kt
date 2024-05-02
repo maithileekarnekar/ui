@@ -26,6 +26,11 @@ class LoginActivity : AppCompatActivity() {
         setContentView(activityLoginBinding.root)
 
         initListeners()
+
+        // Create Notification Channel (uncomment for Android Oreo+)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            createNotificationChannel()
+        }
     }
 
     private fun initListeners() {
@@ -75,7 +80,7 @@ class LoginActivity : AppCompatActivity() {
 
 
     @SuppressLint("MissingPermission")
-    private fun generateAndDisplayOTPNotification(){
+    private fun generateAndDisplayOTPNotification() {
         // Generate OTP
         val otp = generateOTP()
 
@@ -87,7 +92,7 @@ class LoginActivity : AppCompatActivity() {
             .setAutoCancel(true)
 
         with(NotificationManagerCompat.from(this)) {
-            notify(0, notificationBuilder.build())
+            notify(1, notificationBuilder.build())
         }
 
         // Navigate to OTPVerificationActivity
@@ -104,4 +109,3 @@ class LoginActivity : AppCompatActivity() {
     }
 
 }
-

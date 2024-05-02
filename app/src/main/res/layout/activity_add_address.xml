@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_color"
+            android:minHeight="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_back"
+            app:titleTextColor="@color/white">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/border_background"
+                android:clickable="true"
+                android:focusable="true"
+                app:iconifiedByDefault="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:queryHint="Search for society, landmark, locality... "
+                app:showAsAction="always|collapseActionView" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/currentLocationLayout"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iconLocate"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_locate" />
+
+        <TextView
+            android:id="@+id/txtUseMyCurrentLocation"
+            android:text="@string/use_my_current_location"
+            android:textColor="#283876"
+            android:layout_marginStart="16dp"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iconLocate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/savedAddressesLayout"
+        app:layout_constraintTop_toBottomOf="@id/currentLocationLayout"
+        android:padding="16dp"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtSavedAddresses"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/gray"
+            android:text="@string/saved_addresses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/imgHome"
+            android:src="@drawable/icon_home"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtSavedAddresses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtUserName"
+            android:text="Yuvraj"
+            android:textStyle="bold"
+            android:layout_margin="16dp"
+            app:layout_constraintStart_toEndOf="@id/imgHome"
+            app:layout_constraintTop_toBottomOf="@id/txtSavedAddresses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtUserAddress"
+            android:text="B12, Park Town, Jaipur, 302009, India"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@id/imgHome"
+            app:layout_constraintTop_toBottomOf="@id/txtUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:id="@+id/View1"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_height="0.4dp"
+            android:layout_marginStart="16dp"
+            android:background="@color/black"
+            app:layout_constraintStart_toEndOf="@id/imgHome"
+            app:layout_constraintTop_toBottomOf="@id/txtUserAddress"/>
+
+        <ImageView
+            android:id="@+id/imgLocate"
+            android:src="@drawable/icon_locate"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/View1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtUserNameForLocate"
+            android:text="Yuvraj"
+            android:textStyle="bold"
+            android:layout_margin="16dp"
+            app:layout_constraintStart_toEndOf="@id/imgHome"
+            app:layout_constraintTop_toBottomOf="@id/View1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtUserLocateAddress"
+            android:text="Park Town, Jaipur, 302009, India"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@id/imgLocate"
+            app:layout_constraintTop_toBottomOf="@id/txtUserNameForLocate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:id="@+id/View2"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_height="0.4dp"
+            android:layout_marginStart="16dp"
+            android:background="@color/black"
+            app:layout_constraintStart_toEndOf="@id/imgLocate"
+            app:layout_constraintTop_toBottomOf="@id/txtUserLocateAddress"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/addNewAddressesLayout"
+        app:layout_constraintTop_toBottomOf="@id/savedAddressesLayout"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgAddNewAddress"
+            android:src="@drawable/ic_add"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="135dp"
+            android:layout_height="20dp"/>
+
+        <TextView
+            android:id="@+id/txtAddNewAddress"
+            android:text="Add New Address"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@id/imgAddNewAddress"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@color/text_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

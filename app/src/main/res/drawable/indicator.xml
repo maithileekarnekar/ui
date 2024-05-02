@@ -10,12 +10,11 @@
         </shape>
     </item>
     <item>
-        <shape android:shape="oval"
-
+        <shape android:shape="ring"
+            android:innerRadius="5dp"
+            android:thickness="2dp"
             android:useLevel="false">
-            <size
-                android:width="8dp"
-                android:height="8dp" />
+
             <solid android:color="@color/gray" />
         </shape>
     </item>

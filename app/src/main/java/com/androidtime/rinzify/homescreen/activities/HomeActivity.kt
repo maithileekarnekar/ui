@@ -1,6 +1,7 @@
 package com.androidtime.rinzify.homescreen.activities
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Handler
@@ -12,6 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.ViewPager
 import com.androidtime.rinzify.R
+import com.androidtime.rinzify.address.views.AddAddressActivity
 import com.androidtime.rinzify.commons.adapter.ImageSliderAdapter
 import com.androidtime.rinzify.databinding.ActivityHomeBinding
 import com.androidtime.rinzify.homescreen.adapters.ReviewsAdpater
@@ -57,6 +59,14 @@ class HomeActivity : AppCompatActivity() {
         autoImageSlider()
         initAdapter()
         initDatatoReviews()
+        initListeners()
+    }
+
+    private fun initListeners() {
+        activityHomeBinding.imgLocation.setOnClickListener {
+            val intent = Intent(this, AddAddressActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun checkLocationPermission() {

@@ -33,4 +33,5 @@
     <string name="address">Address</string>
     <string name="use_my_current_location">Use my current Location</string>
     <string name="saved_addresses">SAVED ADDRESSES</string>
+    <string name="google_maps_key" translatable="false">"AIzaSyDwdvuoE6ff3z0VLAq3WxaQ-U1R8eZCSyU"</string>
 </resources>
