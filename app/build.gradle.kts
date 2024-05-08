@@ -70,4 +70,8 @@ dependencies {
     implementation ("com.google.maps.android:maps-utils-ktx:3.4.0")
     implementation ("com.google.maps.android:android-maps-utils:2.3.0")
 
+    implementation("androidx.core:core-ktx:1.13.1")
+    implementation("com.hbb20:ccp:2.6.0")
+    implementation("com.android.volley:volley:1.2.1")
+
 }
