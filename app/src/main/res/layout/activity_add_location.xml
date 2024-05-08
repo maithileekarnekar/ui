@@ -33,7 +33,6 @@
 
     <ScrollView
         android:id="@+id/scrollViewAddress"
-        android:background="@color/background_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appBarLayout"
         android:layout_width="match_parent"
@@ -87,7 +86,7 @@
                 app:layout_constraintTop_toBottomOf="@id/txtDetailAddress"
                 app:layout_constraintStart_toStartOf="parent"
                 android:text="@string/detail_address_fill_advice"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <EditText
@@ -181,7 +180,6 @@
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 android:text="@string/save_as"
-                android:textColor="@color/text_color"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -214,9 +212,9 @@
                 android:id="@+id/chipWork"
                 app:chipIcon="@drawable/ic_work"
                 android:text="@string/work"
+                app:chipBackgroundColor="@color/background_color"
                 android:textColor="@color/text_color"
                 app:chipCornerRadius="16dp"
-                app:chipBackgroundColor="@color/background_color"
                 app:layout_constraintTop_toBottomOf="@id/txtSaveAs"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_width="100dp"

@@ -164,33 +164,31 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:id="@+id/addNewAddressesLayout"
         app:layout_constraintTop_toBottomOf="@id/savedAddressesLayout"
         android:padding="16dp"
-        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/imgAddNewAddress"
             android:src="@drawable/ic_add"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_width="wrap_content"
-            android:layout_marginStart="135dp"
             android:layout_height="20dp"/>
 
         <TextView
             android:id="@+id/txtAddNewAddress"
             android:text="Add New Address"
             android:layout_marginStart="16dp"
-            app:layout_constraintStart_toEndOf="@id/imgAddNewAddress"
-            app:layout_constraintTop_toTopOf="parent"
             android:textColor="@color/text_color"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

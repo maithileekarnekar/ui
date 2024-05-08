@@ -8,67 +8,70 @@ import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
-import com.androidtime.rinzify.MainActivity
 import com.androidtime.rinzify.R
 import com.androidtime.rinzify.auth.activities.LoginActivity
+import com.androidtime.rinzify.databinding.ActivitySplashscreenBinding
 
 class SplashScreenActivity : AppCompatActivity() {
 
-    private lateinit var splashScreenLayout: View
-    private lateinit var icon1: View
-    private lateinit var icon2: View
+    private lateinit var activitySplashScreenBinding: ActivitySplashscreenBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splashscreen)
+        activitySplashScreenBinding = ActivitySplashscreenBinding.inflate(layoutInflater)
+        setContentView(activitySplashScreenBinding.root)
 
-        // Find the splash screen layout and icons
-        splashScreenLayout = findViewById(R.id.splash_screen_layout)
-        icon1 = findViewById(R.id.icon1)
-        icon2 = findViewById(R.id.icon2)
+        // Start the animation sequence
+        animateIcon1()
+    }
 
-        // Start fade-in animation for the layout
-        //splashScreenLayout.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_in))
-
-        // Scale and slide left animation for icon1 (growing)
-        val scaleAndSlideLeftGrow = AnimationUtils.loadAnimation(this, R.anim.scale_and_slide_left_grow)
-        scaleAndSlideLeftGrow.setAnimationListener(object : Animation.AnimationListener {
-            override fun onAnimationEnd(animation: Animation?) {
-                // Slide and fade out animation (to the right, longer duration)
-                val slideAndFadeOutLeft = AnimationUtils.loadAnimation(this@SplashScreenActivity, R.anim.slide_and_fade_out_left)
-                icon1.startAnimation(slideAndFadeOutLeft)
-                slideAndFadeOutLeft.setAnimationListener(object : Animation.AnimationListener {
-                    override fun onAnimationEnd(animation: Animation?) {
-                        icon1.visibility = View.INVISIBLE // Make icon1 invisible after animation
-                        icon2.visibility = View.VISIBLE
-                        // Optional animation for icon2 appearance (delay slightly)
-                        Handler(Looper.getMainLooper()).postDelayed({
-                            icon2.startAnimation(AnimationUtils.loadAnimation(this@SplashScreenActivity, R.anim.slide_in_right))
-                        }, 400) // Adjust delay as needed
-                        navigateToLoginActivity()
-                    }
-
-                    override fun onAnimationStart(animation: Animation?) {}
-                    override fun onAnimationRepeat(animation: Animation?) {}
-                })
-            }
-
+    private fun animateIcon1() {
+        val slideOutLeft = AnimationUtils.loadAnimation(this, R.anim.slide_out_left)
+        slideOutLeft.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation?) {}
+            override fun onAnimationEnd(animation: Animation?) {
+                activitySplashScreenBinding.icon1.visibility = View.INVISIBLE
+                animateIcon2()
+            }
             override fun onAnimationRepeat(animation: Animation?) {}
         })
-        icon1.startAnimation(scaleAndSlideLeftGrow)
+        activitySplashScreenBinding.icon1.startAnimation(slideOutLeft)
+    }
+
+    private fun animateIcon2() {
+        activitySplashScreenBinding.icon2.visibility = View.VISIBLE
+        val slideInLeft = AnimationUtils.loadAnimation(this, R.anim.slide_in_left)
+        slideInLeft.setAnimationListener(object : Animation.AnimationListener {
+            override fun onAnimationStart(animation: Animation?) {}
+            override fun onAnimationEnd(animation: Animation?) {
+                Handler(Looper.getMainLooper()).postDelayed({
+                    activitySplashScreenBinding.icon2.visibility = View.INVISIBLE
+                    animateIcon3()
+                }, 500)
+            }
+            override fun onAnimationRepeat(animation: Animation?) {}
+        })
+        activitySplashScreenBinding.icon2.startAnimation(slideInLeft)
     }
 
 
+    private fun animateIcon3() {
+        // Animation for icon3 appearance
+        val slideInRight = AnimationUtils.loadAnimation(this, R.anim.slide_in_right)
+        activitySplashScreenBinding.icon3.visibility = View.VISIBLE
+        activitySplashScreenBinding.icon3.startAnimation(slideInRight)
+        // Navigate to the next activity after the animation completes
+        slideInRight.setAnimationListener(object : Animation.AnimationListener {
+            override fun onAnimationStart(animation: Animation?) {}
+            override fun onAnimationEnd(animation: Animation?) {
+                navigateToLoginActivity()
+            }
+            override fun onAnimationRepeat(animation: Animation?) {}
+        })
+    }
 
     private fun navigateToLoginActivity() {
         val intent = Intent(this, LoginActivity::class.java)
-        startActivity(intent)
-        finish()
-    }
-
-    private fun navigateToMainActivity() {
-        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
     }

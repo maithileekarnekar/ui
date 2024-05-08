@@ -2,10 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
-    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -18,50 +21,52 @@
         android:theme="@style/Theme.Rinzify"
         tools:targetApi="31">
 
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
         <activity
             android:name=".splashscreen.SplashScreenActivity"
-            android:theme="@style/Theme.RemoveSplashScreenTheme"
-            android:exported="true">
-
+            android:exported="true"
+            android:theme="@style/Theme.RemoveSplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER"/>
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
-        </activity>
 
-        <activity android:name=".auth.activities.LoginActivity"
-            android:exported="true">
         </activity>
-
-        <activity android:name=".auth.activities.OTPVerificationActivity"
+        <activity
+            android:name=".auth.activities.LoginActivity"
             android:exported="true">
+
         </activity>
-
-        <activity android:name=".homescreen.activities.HomeActivity"
+        <activity
+            android:name=".auth.activities.OTPVerificationActivity"
             android:exported="true">
+
         </activity>
-
-        <activity android:name=".address.views.AddAddressActivity"
+        <activity
+            android:name=".homescreen.activities.HomeActivity"
             android:exported="true">
+
         </activity>
-
-        <activity android:name=".address.views.AddNewAddressActivity"
+        <activity
+            android:name=".address.views.AddAddressActivity"
             android:exported="true">
+
         </activity>
-
-        <activity android:name=".address.views.UseMyCurrentLocationActivity"
+        <activity
+            android:name=".address.views.AddNewAddressActivity"
             android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".address.views.UseMyCurrentLocationActivity"
+            android:exported="true">
+
         </activity>
     </application>
-
-
 
 </manifest>

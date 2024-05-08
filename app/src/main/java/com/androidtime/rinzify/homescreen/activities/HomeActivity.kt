@@ -55,6 +55,12 @@ class HomeActivity : AppCompatActivity() {
         imageSliderAdapter = ImageSliderAdapter(this, imageList)
         viewPager.adapter = imageSliderAdapter
 
+        // Retrieve data from intent
+        val address = intent.getStringExtra("address")
+
+        // Update UI
+        activityHomeBinding.txtLocation.text = address
+
         checkLocationPermission()
         autoImageSlider()
         initAdapter()

@@ -9,4 +9,5 @@
     <color name="divider_color">#d6dfe7</color>
     <color name="primary_color">@color/black</color>
     <color name="text_color">@color/black</color>
+    <color name="light_gray">#e0e0de</color>
 </resources>

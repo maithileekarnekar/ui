@@ -68,6 +68,7 @@
                 android:id="@+id/edtMobileNumber"
                 android:inputType="phone"
                 android:singleLine="true"
+                android:textColor="@color/text_color"
                 android:layout_width="210dp"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -149,6 +150,7 @@
             android:text="@string/by_continuing_you_agree_to_our"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:textColor="@color/text_color"
             android:layout_marginTop="32dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -161,6 +163,7 @@
             android:layout_marginTop="8dp"
             android:textStyle="bold"
             android:textSize="12sp"
+            android:textColor="@color/text_color"
             android:text="@string/terms_of_services"
             app:layout_constraintTop_toBottomOf="@+id/txtAgreeingTerm"
             app:layout_constraintStart_toStartOf="parent"
@@ -171,6 +174,7 @@
         <TextView
             android:id="@+id/dottedLineView1"
             android:text="@string/dotted_line_view_1"
+            android:textColor="@color/text_color"
             app:layout_constraintTop_toBottomOf="@+id/txtTermsOfServices"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/txtPrivacyPolicy"
@@ -182,6 +186,7 @@
             android:layout_marginTop="8dp"
             android:textStyle="bold"
             android:textSize="12sp"
+            android:textColor="@color/text_color"
             android:text="@string/privacy_policy"
             app:layout_constraintTop_toBottomOf="@+id/txtAgreeingTerm"
             app:layout_constraintStart_toEndOf="@id/txtTermsOfServices"
@@ -192,6 +197,7 @@
         <TextView
             android:id="@+id/dottedLineView2"
             android:text="@string/dotted_line_view_2"
+            android:textColor="@color/text_color"
             app:layout_constraintTop_toBottomOf="@+id/txtPrivacyPolicy"
             app:layout_constraintStart_toEndOf="@id/txtTermsOfServices"
             app:layout_constraintEnd_toStartOf="@id/txtContentPolicies"
@@ -203,6 +209,7 @@
             android:layout_marginTop="8dp"
             android:textStyle="bold"
             android:textSize="12sp"
+            android:textColor="@color/text_color"
             android:text="@string/content_policies"
             app:layout_constraintTop_toBottomOf="@+id/txtAgreeingTerm"
             app:layout_constraintStart_toEndOf="@id/txtPrivacyPolicy"
@@ -213,6 +220,7 @@
         <TextView
             android:id="@+id/dottedLineView3"
             android:text="@string/dotted_line_view_3"
+            android:textColor="@color/text_color"
             app:layout_constraintTop_toBottomOf="@+id/txtContentPolicies"
             app:layout_constraintStart_toEndOf="@id/txtPrivacyPolicy"
             app:layout_constraintEnd_toEndOf="parent"

@@ -41,6 +41,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/add_address"
+                android:textColor="@color/text_color"
                 app:layout_constraintStart_toEndOf="@id/imgLocation"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,6 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:text="Jaipur"
+                android:textColor="@color/text_color"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/imgLocation"
                 app:layout_constraintTop_toBottomOf="@id/txtAddAddress" />
@@ -57,6 +59,7 @@
             <TextView
                 android:id="@+id/txtVehicle"
                 android:text="@string/vehicle"
+                android:textColor="@color/text_color"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toEndOf="@id/txtAddAddress"
                 android:layout_marginStart="150dp"
@@ -68,6 +71,7 @@
             <TextView
                 android:id="@+id/txtAddVehicle"
                 android:text="@string/add"
+                android:textColor="@color/text_color"
                 android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@id/txtVehicle"
                 app:layout_constraintStart_toEndOf="@id/txtAddAddress"
@@ -266,6 +270,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
+                        android:textColor="@color/text_color"
                         android:text="@string/give_a_friend_promo_code_on_u20b9150_and_you_ll_get_u20b9150_off_your_next_service"
                         android:textSize="15sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -278,6 +283,7 @@
                         android:layout_height="50dp"
                         android:background="@drawable/dotted_border"
                         android:text="@string/gbd21"
+                        android:textColor="@color/text_color"
                         android:gravity="center"
                         android:drawableStart="@drawable/ic_copy_with_padding"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -289,6 +295,7 @@
                         android:layout_height="50dp"
                         android:backgroundTint="@color/text_color"
                         android:text="@string/invite_friends"
+                        android:textColor="@color/background_color"
                         android:gravity="center"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent" />
@@ -343,6 +350,7 @@
         android:id="@+id/bottomNavigationBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/text_color"
         android:background="@color/background_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

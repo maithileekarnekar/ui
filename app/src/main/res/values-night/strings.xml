@@ -32,4 +32,15 @@
     <string name="address">Address</string>
     <string name="use_my_current_location">Use my current Location</string>
     <string name="saved_addresses">SAVED ADDRESSES</string>
+    <string name="detail_address_fill_advice">" A detailed address will help our Service Partner reach your doorstep easily"</string>
+    <string name="directions_to_reach">Directions To Reach</string>
+    <string name="optional">(Optional)</string>
+    <string name="tap_to_record_voice_directions">Tap to record voice directions</string>
+    <string name="example">e.g. Ring the bell on red gate</string>
+    <string name="save_as">Save As</string>
+    <string name="other">Other</string>
+    <string name="work">Work</string>
+    <string name="change">Change</string>
+    <string name="locate_me">Locate Me</string>
+    <string name="add_location">Add Location</string>
 </resources>
