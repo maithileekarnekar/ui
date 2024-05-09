@@ -37,6 +37,7 @@
         android:id="@+id/scrollViewAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appBarLayout">
 
@@ -66,49 +67,59 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/map" />
 
-            <ImageView
-                android:id="@+id/imgLocation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:src="@drawable/ic_address"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/addressLayout"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/map" />
+                app:layout_constraintTop_toBottomOf="@id/map"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/imgLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/ic_address"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/txtMainAddressTitle"
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:textColor="@color/text_color"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/imgLocation"
-                app:layout_constraintTop_toBottomOf="@id/map" />
+                <TextView
+                    android:id="@+id/txtMainAddressTitle"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/text_color"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/imgLocation"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/txtDetailAddress"
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/text_color"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtMainAddressTitle" />
+                <TextView
+                    android:id="@+id/txtDetailAddress"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/text_color"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtMainAddressTitle" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnChangeLocation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:backgroundTint="#f1f1f4"
-                android:text="@string/change"
-                android:textColor="@color/app_accent_color"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/map" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnChangeLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:backgroundTint="#f1f1f4"
+                    android:text="@string/change"
+                    android:textColor="@color/app_accent_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
             <TextView
                 android:id="@+id/txtSaveAs"
@@ -118,50 +129,58 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/save_as"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtDetailAddress" />
+                app:layout_constraintTop_toBottomOf="@id/addressLayout" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnHome"
-                android:layout_marginStart="16dp"
-                android:layout_width="110dp"
-                android:layout_height="60dp"
-                android:text="@string/home"
-                android:visibility="gone"
-                android:drawablePadding="8dp"
-                android:drawableStart="@drawable/ic_home"
-                android:textColor="@color/text_color"
-                android:backgroundTint="@color/light_gray"
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btnSaveAsLayout"
+                android:layout_width="match_parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtSaveAs" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnOther"
-                android:layout_width="110dp"
-                android:layout_height="60dp"
-                android:text="@string/other"
-                android:drawablePadding="8dp"
-                android:visibility="gone"
-                android:drawableStart="@drawable/ic_other"
-                app:layout_constraintStart_toEndOf="@id/btnHome"
-                app:layout_constraintEnd_toStartOf="@id/btnWork"
                 app:layout_constraintTop_toBottomOf="@id/txtSaveAs"
-                android:textColor="@color/text_color"
-                android:backgroundTint="@color/light_gray" />
+                android:layout_height="wrap_content">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnWork"
-                android:layout_width="110dp"
-                android:layout_height="60dp"
-                android:text="@string/work"
-                android:layout_marginEnd="16dp"
-                android:drawablePadding="8dp"
-                android:gravity="center"
-                android:visibility="gone"
-                android:drawableStart="@drawable/ic_work"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtSaveAs"
-                android:textColor="@color/text_color"
-                android:backgroundTint="@color/light_gray"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnHome"
+                    android:layout_marginStart="16dp"
+                    android:layout_width="110dp"
+                    android:layout_height="60dp"
+                    android:text="@string/home"
+                    android:drawablePadding="8dp"
+                    android:drawableStart="@drawable/ic_home"
+                    android:textColor="@color/text_color"
+                    android:backgroundTint="@color/light_gray"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnOther"
+                    android:layout_width="110dp"
+                    android:layout_height="60dp"
+                    android:text="@string/other"
+                    android:drawablePadding="8dp"
+                    android:drawableStart="@drawable/ic_other"
+                    app:layout_constraintStart_toEndOf="@id/btnHome"
+                    app:layout_constraintEnd_toStartOf="@id/btnWork"
+                    android:textColor="@color/text_color"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:backgroundTint="@color/light_gray" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnWork"
+                    android:layout_width="110dp"
+                    android:layout_height="60dp"
+                    android:text="@string/work"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginEnd="16dp"
+                    android:drawablePadding="8dp"
+                    android:gravity="center"
+                    android:drawableStart="@drawable/ic_work"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textColor="@color/text_color"
+                    android:backgroundTint="@color/light_gray"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <Button
                 android:id="@+id/btnAddLocation"
@@ -173,7 +192,7 @@
                 android:backgroundTint="@color/app_accent_color"
                 android:text="@string/add_location"
                 android:textColor="@color/text_color"
-                app:layout_constraintTop_toBottomOf="@id/btnHome" />
+                app:layout_constraintTop_toBottomOf="@id/btnSaveAsLayout" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
