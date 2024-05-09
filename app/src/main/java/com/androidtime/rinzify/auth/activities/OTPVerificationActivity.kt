@@ -97,10 +97,18 @@ class OTPVerificationActivity : AppCompatActivity() {
         }
     }
     private fun autofillOTP(otp: String) {
-        otpVerficationActivityBinding.edtOTP1.setText(otp[0].toString())
-        otpVerficationActivityBinding.edtOTP2.setText(otp[1].toString())
-        otpVerficationActivityBinding.edtOTP3.setText(otp[2].toString())
-        otpVerficationActivityBinding.edtOTP4.setText(otp[3].toString())
+            otpVerficationActivityBinding.edtOTP1.postDelayed({
+                otpVerficationActivityBinding.edtOTP1.setText(otp[0].toString())
+                otpVerficationActivityBinding.edtOTP2.postDelayed({
+                    otpVerficationActivityBinding.edtOTP2.setText(otp[1].toString())
+                    otpVerficationActivityBinding.edtOTP3.postDelayed({
+                        otpVerficationActivityBinding.edtOTP3.setText(otp[2].toString())
+                        otpVerficationActivityBinding.edtOTP4.postDelayed({
+                            otpVerficationActivityBinding.edtOTP4.setText(otp[3].toString())
+                        }, 200)
+                    }, 200)
+                }, 200)
+            }, 200)
     }
 
     private fun getEnteredOTP(): String {

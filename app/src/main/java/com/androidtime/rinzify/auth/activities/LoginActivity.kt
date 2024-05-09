@@ -56,7 +56,7 @@ class LoginActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = "OTP Notification Channel"
             val descriptionText = "Channel for displaying OTP notifications"
-            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val importance = NotificationManager.IMPORTANCE_HIGH
             val channel = NotificationChannel("OTP_CHANNEL", name, importance).apply {
                 description = descriptionText
             }
